@@ -21,7 +21,9 @@ export const useMetamask = () => {
     }
   }
 
-  function handleAccountChange(accounts?: string[]) {
+  function handleAccountChange(...args: unknown[]) {
+    const accounts = args[0] as string[] | undefined;
+  
     if (accounts && accounts.length > 0) {
       setAccount(accounts[0]);
     } else if (ethereum?.selectedAddress) {
