@@ -24,15 +24,10 @@ export const useMetamask = () => {
   function handleAccountChange(accounts?: string[]) {
     if (accounts && accounts.length > 0) {
       setAccount(accounts[0]);
-      return;
-    }
-    if (accounts && accounts.length === 0) {
+    } else if (ethereum?.selectedAddress) {
+      setAccount(ethereum.selectedAddress);
+    } else {
       setAccount("");
-      return;
-    }
-    if (ethereum?.selectedAddress) {
-      setAccount(ethereum?.selectedAddress);
-      return;
     }
   }
 
@@ -52,9 +47,9 @@ export const useMetamask = () => {
 
   React.useEffect(() => {
     if (ethereum) {
-      handleAccountChange();
+      handleAccountChange(ethereum.selectedAddress ? [ethereum.selectedAddress] : []);
 
-      ethereum?.on("accountsChanged", handleAccountChange);
+      ethereum.on("accountsChanged", handleAccountChange);
     }
   }, [ethereum]);
 
