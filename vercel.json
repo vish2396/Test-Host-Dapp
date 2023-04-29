@@ -1,11 +1,12 @@
 {
     "builds": [
-      { "src": "package.json", "use": "@vercel/static-build" }
+      { "src": "package.json", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/src/testpage.tsx" }
+      { "src": "/(.*)", "dest": "/index.js" }
     ],
     "env": {
-      "MY_ENV_VARIABLE": "my-env-value"
+      "INFURA_PROJECT_ID": "prj_YjWJY4MLfWnOyokhRvcUtIEs3QaP",
+      "PRIVATE_KEY": "0xd5a153a0f7bd680583219702e388335f17666df1ffbb20004244d0ce8ecc6c9e"
     }
   }
