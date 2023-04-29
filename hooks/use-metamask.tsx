@@ -53,7 +53,7 @@ export const useMetamask = () => {
 
       ethereum.on("accountsChanged", handleAccountChange);
     }
-  }, [ethereum]);
+  },);
 
   return { ethereum, account, handleOnboarding };
 };
