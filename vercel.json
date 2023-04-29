@@ -3,7 +3,7 @@
       { "src": "package.json", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/index.js" }
+      { "src": "/(.*)", "dest": "/index.tsx" }
     ],
     "env": {
       "INFURA_PROJECT_ID": "prj_YjWJY4MLfWnOyokhRvcUtIEs3QaP",
