@@ -3,10 +3,10 @@
       { "src": "package.json", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/pages/index.tsx" }
+      { "src": "/(.*)", "dest": "/src/testpage.tsx" }
     ],
     "env": {
-      "INFURA_PROJECT_ID": "prj_YjWJY4MLfWnOyokhRvcUtIEs3QaP",
+      "VERCEL_PROJECT_ID": "prj_YjWJY4MLfWnOyokhRvcUtIEs3QaP",
       "PRIVATE_KEY": "0xd5a153a0f7bd680583219702e388335f17666df1ffbb20004244d0ce8ecc6c9e"
     }
   }
