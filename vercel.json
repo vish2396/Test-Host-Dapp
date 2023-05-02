@@ -1,14 +1,10 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": ".",
-      "use": "@vercel/node"
-    },
-    {
-      "src": ".next/**/*",
-      "use": "@vercel/next"
-    }
+    { "src": ".", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
   ],
   "build": {
     "env": {
