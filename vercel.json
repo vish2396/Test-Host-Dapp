@@ -1,15 +1,10 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "next.config.js",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
+    { "src": "package.json", "use": "@vercel/node" },
+    { "src": ".next/**/*", "use": "@vercel/next" },
+    { "src": "public/**/*", "use": "copy" },
+    { "use": "@vercel/static", "config": { "cleanUrls": true } },
+    { "use": "@vercel/static-build", "config": { "command": "custom-build-command" } }
   ]
 }
